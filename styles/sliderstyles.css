@@ -1,0 +1,99 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*********************************
+        MAIN STYLES
+*********************************/
+body{
+    background:hsl(260,65%,95%);
+    /* hsl = hue, saturation, luminosity */
+    font-family:"Just Another Hand", cursive;
+    /* if a font is very tight, use letter-spacing to open it up */
+    letter-spacing:3px;
+}
+
+h1{
+	font-size:48px;
+	padding:15px 20px 0;
+    /* three values in padding or margin means: top, left-right, bottom */
+}
+
+.container{
+    /* set a maximum width for the site to expand, and centre the site in the browser */
+    max-width:800px;
+    margin:0 auto;
+    /* with two values in margin or padding, it means: top-bottom, left-right
+    by applying the same amount of margin automatically (auto), this centres
+    the element in its parent */
+}
+
+
+/*********************************
+        SLIDER STYLES
+*********************************/
+.slider{
+    /* each image is 500px wide, so our slider needs to be 500px wide too */
+    width:500px;
+    margin:0 auto;
+    background:red;
+}
+
+.slideholder{
+    width:1500px;
+    /* we need 1500px so all three 500px images can sit next to each other */
+    background:blue;
+}
+
+.imgslide{
+    width:500px;
+    height:300px;
+    float:left;
+    /* float makes things sit horizontally, so long as there is enough space...
+    if you run out of space, things will drop down to the next line */
+}
