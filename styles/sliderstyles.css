@@ -73,6 +73,21 @@ h1{
     the element in its parent */
 }
 
+footer{
+    /* the position property is kind of like layering - you can assign a specific
+    position to something, and make it be above other things
+    position:fixed assigns a position relative to the browser window */
+    position:fixed;
+    /* you can then assign a specific position, using top or bottom, right or left */
+    bottom:0;
+    right:20%;
+
+    /* you can use a 3D position, using z-index, which will ensure this is always on top
+    of everything on our site */
+    z-index:5; /* this number is arbitrary - by default, everything has a z-index
+    of 1, and higher numbers are on top of that */
+}
+
 
 /*********************************
         SLIDER STYLES
@@ -81,13 +96,29 @@ h1{
     /* each image is 500px wide, so our slider needs to be 500px wide too */
     width:500px;
     margin:0 auto;
-    background:red;
+    text-align:center; /* this will center the images and any text, including
+    form field, inside the slider */
+
+    /* position:relative is the default - everything automatically has it - but
+    unless you declare it, the element won't hold things with position:absolute */
+    position:relative;
 }
 
 .slideholder{
     width:1500px;
+    height:300px; /* because the element can't see the height of floated things inside it,
+    we have to give this element a defined height */
     /* we need 1500px so all three 500px images can sit next to each other */
-    background:blue;
+
+    /* position:absolute will position something relative to whatever it is inside
+    (its parent) - as long as that parent also has a position property */
+    position:absolute;
+    top:0;
+    left:0;
+
+    /* transition will animate any change to an element - for example,
+    we change the left position of this element when each radio button is clicked */
+    
 }
 
 .imgslide{
@@ -95,5 +126,30 @@ h1{
     height:300px;
     float:left;
     /* float makes things sit horizontally, so long as there is enough space...
-    if you run out of space, things will drop down to the next line */
+    if you run out of space, things will drop down to the next line 
+    you can float left or right, which makes things horizontal from left-to-right
+    or right-to-left */
+}
+
+/* target the images specifically to give them margin and push them down */
+.imgslide img{
+    /* this get the images only inside of the thing with the class .imgslide */
+    margin-top:155px;
+}
+
+
+/* we are using a few CSS properties here... 
+using the IDs of the radio button, we check if they are checked, using the pseudoclass
+:checked 
+the ~ is called the sibling selector, it looks for elements that come after other elements
+... so this looks for the thing with the class .slideholder that comes after #slide1
+when #slide1 is checked */
+#slide1:checked ~ .slideholder{
+    left:0;
+}
+#slide2:checked ~ .slideholder{
+    left:-500px;
+}
+#slide3:checked ~ .slideholder{
+    left:-1000px;
 }
