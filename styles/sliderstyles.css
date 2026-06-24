@@ -102,6 +102,9 @@ footer{
     /* position:relative is the default - everything automatically has it - but
     unless you declare it, the element won't hold things with position:absolute */
     position:relative;
+
+    /*make it so anything outside the slider is hidden */
+    overflow:hidden;
 }
 
 .slideholder{
@@ -153,4 +156,65 @@ when #slide1 is checked */
 }
 #slide3:checked ~ .slideholder{
     left:-1000px;
+}
+
+
+/* tell the radio buttons not to show up using display:none */
+input[type="radio"]{
+    display:none;
+}
+
+
+
+/*********************************
+        BUTTON STYLES
+*********************************/
+label{
+    cursor:pointer;
+    /* labels are inline elements - they try to be small, sit in line with the text,
+    and can't have a width - so we have to change their display property */
+    display:inline-block;
+    /* inline-block is between inline and block - they will sit beside each other or
+    beside text, but they can have a width, height, and margin */
+
+    width:100px;
+    background:hsl(101,100%,80%);
+    border:2px solid hsl(101,100%,30%);
+    /* hsl is great for colour variations - by only changing the luminosity, the border
+    is a darker version of the background */
+
+    /* margin is the space around the element, or between other element */
+    margin: 0 15px; /* this is 15px on the left and right, 0 on the top and bottom */
+
+    /* padding is the space inside an element, pushing content away from the edge */
+    padding: 5px 0;
+
+    /* round the corners */
+    border-radius: 10px;
+
+    font-size:24px;
+
+    /* use transition to animate the changes on hover and active state - 
+    a subtle animation makes things feel friendly and more real */
+    transition: all 0.5s;
+}
+
+/* put a hover (and active) state on the label */
+label:hover, label:active{
+    background:hsl(101, 100%, 40%);
+}
+
+/* to make the buttons stay "selected", we have to style them based on which radio
+button is checked, using :checked and the ~ sibling selector */
+#slide1:checked ~ label[for="slide1"]{
+    background:hsl(101,100%,50%);
+    font-weight:bold;
+}
+#slide2:checked ~ label[for="slide2"]{
+    background:hsl(101,100%,50%);
+    font-weight:bold;
+}
+#slide3:checked ~ label[for="slide3"]{
+    background:hsl(101,100%,50%);
+    font-weight:bold;
 }
