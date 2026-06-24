@@ -118,7 +118,8 @@ footer{
 
     /* transition will animate any change to an element - for example,
     we change the left position of this element when each radio button is clicked */
-    
+    transition: all 1s;
+    /* "all" says to animate any change - 1s means make the animation last 1 second */
 }
 
 .imgslide{
